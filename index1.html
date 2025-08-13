@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts">
+  <style>
+     #login{
+        background-color:blue;
+        color:white;
+        height: 35px;
+        width:75px;
+        border: none;
+        border-radius: 2px;
+        font-weight: 500;
+        margin-right: 50px;
+        font-size: 15px;
+        font-weight:545px ;
+    }
+    i{
+        padding-right: 5px;
+    }
+    #login:hover{
+        background-color:red ;
+        cursor:pointer;
+        box-shadow: 0 0 10px goldenrod;
+        transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <form action="login.html" method="post">
+   <div class="container">
+    <nav>
+      <div class="logo">
+         <h1>Daily News</h1>
+         <li id="politics" onclick="navClick('politics')">politics</li>
+         <li id="sports" onclick="navClick('sports')">sports</li>
+         <li id="technology" onclick="navClick('technology')">technology</li>
+      </div>
+      <br>
+      <div class="category">
+        <h1 id="type"></h1>
+      </div>
+      <div class="searchBar">
+        <input type="text" placeholder="search here" id="inputData" value="">
+        <button id="searchbtn">search</button>
+      </div>
+      <div class="login">
+        <button id="login">
+          <i class='bx bxs-user'></i>Login
+        </button>
+      </div>
+    </nav>
+    <div class="cardData">
+     
+    </div>
+   </div>
+  </form>
+  <script src="script.js"></script>
+  <script>
+    // Redirect to login.html on Login button click
+    document.getElementById('login').addEventListener('click', function(event) {
+      event.preventDefault();
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

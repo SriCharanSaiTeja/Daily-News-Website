@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+    <title>Document</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    font-family:'Roboto', sans-serif ;
+    box-sizing:border-box;
+}
+body{
+     color:white;
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     background-color:black;
+     
+}
+.container{
+     background-color:black;
+     width:450px;
+     height:380px;
+     border-radius: 15px;  
+     box-shadow: 0 0 40px silver;  
+}
+.container h1{
+     text-align: center;
+     margin-top:40px;
+     padding-top: 10px;
+     
+}
+.container .input-box{
+     width:100%;
+     height:50px;
+     margin:25px 0px;
+     position:relative;
+     
+}
+.input-box label{
+     margin-left:30px;
+}
+.input-box input{
+     width:70%;
+     height:100%;
+     background: transparent;
+     border:2px solid white;
+     outline:none;
+     border-radius: 50px;   
+}
+input[type=password],input[type=email]{
+     padding-left: 20px;
+     color: white;
+}
+.input-box input::placeholder{
+     color:darkgray;
+}
+.input-box i{
+     
+     position:absolute;
+     top:35%;
+     transform: translate(-180%);
+}
+
+.container .remember{
+     display: flex;
+     justify-content: space-around;
+     font-size: 15px;
+     padding-bottom: 5px;
+}
+.remember label input{
+     accent-color: silver;
+}
+.container .btn{
+     width:80%;
+     height:45px;
+     border:none;
+     outline:none;
+     border-radius: 50px;
+     margin-left: 20px;
+     font-weight:600;
+     cursor: pointer;
+     margin-top: 10px;
+     font-size: 17px;
+     background: silver;
+     box-shadow: 0 0 10px silver;
+     margin-left: 50px;
+}
+
+
+.container .register p{
+     display:flex;
+     justify-content: center;
+     padding-top: 15px;
+}
+ .remember a{
+     margin-left: 10px;
+     color:white;
+     text-decoration: none;
+}
+ .remember a:hover{
+     color:silver;
+     text-decoration: underline;
+ }
+#email{
+     margin-left:30px;
+}
+#password{
+     margin-left:3px;
+}
+.register p a{
+     color:white;
+     text-decoration: none;
+}
+.register p a:hover{
+     text-decoration: underline;
+     color: silver;
+}
+
+
+
+    </style>
+    
+    
+</head>
+<body>
+    <form action="sample.html" method="post" id="loginForm">
+        
+    <div class="container">
+        <h1>Login</h1>
+        <div class="input-box">
+            <label for="email"><b>E-mail</b></label>
+            <input type="email" placeholder="Enter your email" name="email" id="email" required>
+            <i class='bx bxs-envelope'></i>
+           
+        </div>    
+        <div class="input-box">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="remember">
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <a href="#">Forgot password?</a>
+        </div>    
+            
+            <button type="submit" class="btn">Login</button>
+        <div class="register">
+            <p>
+                don't have an account?<a href="registration1.html">Register</a>
+            </p>
+        </div>    
+    </div>       
+    </form>
+    <script>
+        document.getElementById('loginForm').onsubmit = function(e) {
+          e.preventDefault();
+          alert("Account logged in successfully.");
+          window.location.href = "sample.html";
+        };
+    </script>
+
+</body>
+</html>
