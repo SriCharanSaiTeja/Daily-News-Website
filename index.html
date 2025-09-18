@@ -67,6 +67,39 @@
       event.preventDefault();
       window.location.href = 'login.html';
     });
+
+    // Example news data (replace with your actual data)
+    const newsData = [
+      { title: "Politics News 1", category: "politics", description: "Description about politics." },
+      { title: "Sports News 1", category: "sports", description: "Description about sports." },
+      { title: "Tech News 1", category: "technology", description: "Description about technology." }
+      // ...add more items as needed
+    ];
+
+    // Handle search button click
+    document.getElementById('searchbtn').addEventListener('click', function(event) {
+      event.preventDefault();
+      const query = document.getElementById('inputData').value.toLowerCase();
+      const results = newsData.filter(item =>
+        item.title.toLowerCase().includes(query) ||
+        item.category.toLowerCase().includes(query) ||
+        item.description.toLowerCase().includes(query)
+      );
+      const cardDataDiv = document.querySelector('.cardData');
+      cardDataDiv.innerHTML = '';
+      if (results.length === 0) {
+        cardDataDiv.innerHTML = '<p>No results found.</p>';
+      } else {
+        results.forEach(item => {
+          cardDataDiv.innerHTML += `
+            <div class="card">
+              <h2>${item.title}</h2>
+              <p>${item.description}</p>
+            </div>
+          `;
+        });
+      }
+    });
   </script>
 </body>
 </html>

@@ -160,11 +160,13 @@ input[type=password],input[type=email]{
     </div>       
     </form>
     <script>
+      document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('loginForm').onsubmit = function(e) {
           e.preventDefault();
           alert("Account logged in successfully.");
-          window.location.href = "sample.html";
+          window.location.replace("sample.html");
         };
+      });
     </script>
 
 </body>
