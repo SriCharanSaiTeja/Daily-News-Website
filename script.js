@@ -1,4 +1,14 @@
 let key="3503f7a34b244582a643cb7f62e4ede0";
+const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${key}`;
+
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data); // You can display it on the page
+  })
+  .catch(error => {
+    console.error("Error fetching news:", error);
+  });
 let cardData=document.querySelector(".cardData");
 let searchbtn=document.getElementById("searchbtn");
 let inputData=document.getElementById("inputData");
